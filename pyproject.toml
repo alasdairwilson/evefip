@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "evefip"
+version = "0.1.0"
+description = "Track FIP-bias evolution of emerging active regions with SDO/EVE"
+requires-python = ">=3.10"
+dependencies = [
+  "sunpy[net]>=6.0",
+  "astropy",
+  "numpy",
+  "pandas",
+  "pyarrow",
+  "matplotlib",
+  "drms",
+  "parfive",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["evefip*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
